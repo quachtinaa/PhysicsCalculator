@@ -1,60 +1,83 @@
-//Dr. T help on Unit 1 Assignment COSC-1437 Dr. Tyson McMillan, code
-//Student: Type your Name
+//Student: Tina Quach - 3/20/2024
 #include <iostream>
+#include <string>
+
 using namespace std; 
 
 void showMenu(); 
 void calcVelocity(); 
 void calcMotion(); 
+void calcAcceleration();
+void calcNewtonsSecondLaw();
+void calcWeight();
+void calcMomentum();
 
 int main() 
 {
   int choice = 0;
+  
   do
   {
-      showMenu(); // call the show menu function
+      showMenu(); // call the show menu function to display menu
       cin >> choice; 
-      if(choice == 1)
+      if (choice == 1)
       {
         calcVelocity(); //call the calcVelocity() function
       }
-      else if(choice == 2)
+      else if (choice == 2)
       {
         //calcAcceleration() 
       }
-      else if(choice == 3)
+      else if (choice == 3)
       {
-        //calcMotion()
         calcMotion(); 
       }
-  }while(choice != 7);  
+      else if (choice == 4)
+      {
+        calcNewtonsSecondLaw();
+      }
+      else if (choice == 5)
+      {
+        calcWeight();
+      }
+      else if (choice == 6)
+      {
+        calcMomentum();
+      }
+  } while (choice != 7);  
   return 0; 
 }
 
+// function to display menu
 void showMenu()
 {
-  cout << "Menu\n";
-  cout << "1. calc velocity\n";
-  cout << "2. calc acceleration\n";
-  cout << "3. calc motion\n";
-  cout << "4. calc newton's 2nd law\n";
-  cout << "5. calc weight\n";
-  cout << "6. calc momentum\n";
-  cout << "7. Exit\n";
+  cout << "\nMenu\n";
+  cout << "1. calculate velocity\n";
+  cout << "2. calculate acceleration\n";
+  cout << "3. calculate motion\n";
+  cout << "4. calculate newton's 2nd law\n";
+  cout << "5. calculate weight\n";
+  cout << "6. calculate momentum\n";
+  cout << "7. exit\n";
   cout << "8. clear screen\n";
-  cout << "Enter your choice: ";
+  cout << "\nenter your choice: ";
 }
 
 void calcVelocity()
 {
   double ds = 0.0, dt = 0.0; // ds = ds (distance)
-  cout << "Velocity Calculator\n";
+  cout << "\nVelocity Calculator\n";
   cout << "Enter ds (d = ds): ";
   cin >> ds; 
   cout << "Enter dt (d = dt): ";
   cin >> dt; 
-  cout << "Velocity = " << ds / dt << endl;
+  cout << "Velocity = " << ds / dt << "km/hour" << endl;
   
+}
+
+void calcAcceleration()
+{
+
 }
 
 void calcMotion()
@@ -84,4 +107,19 @@ void calcMotion()
   {
     //solve for Ms
   }
+}
+
+void calcNewtonsSecondLaw()
+{
+  
+}
+
+void calcWeight()
+{
+  
+}
+
+void calcMomentum()
+{
+  
 }
