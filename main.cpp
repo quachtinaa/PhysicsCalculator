@@ -10,13 +10,10 @@ using namespace std;
 
 
 // prototypes
-void showMenu(); 
-void calcVelocity(); 
-void calcMotion(); 
-void calcAcceleration();
-void calcNewtonsSecondLaw();
-void calcWeight();
-void calcMomentum();
+void showMenu();
+void calcVelocity(), calcMotion(), calcAcceleration(), calcNewtonsSecondLaw(), calcWeight(), calcMomentum();
+void calcS(), calcVSquared(), calcVBar();
+
 
 int main() 
 {
@@ -128,29 +125,28 @@ void calcVelocity()
   // variables
   double ds = 0.0, dt = 0.0; 
   string dsUnit = "", dtUnit = "";
-  string color;
+  string color = "\x1b[" + to_string(32) + ";"+to_string(34)+"m";
   string reset = "\x1b[0m";
   
-  cout << "\nVelocity Calculator\n";
+  cout << color << "\nVelocity Calculator\n" << reset;
   cout << "-------------------\n";
   
   // ask user for ds, dt, and their units
-  cout << "Enter ds, ";
+  cout << "Enter ds (speed), ";
   ds = validateDouble(ds);
 
   cout << "\nEnter ds's units, ";
   dsUnit = validateString(dsUnit);
   
-  cout << "\nEnter dt, ";
+  cout << "\nEnter dt (time), ";
   dt = validateDouble(dt);
 
   cout << "\nEnter dt's units, ";
   dtUnit = validateString(dtUnit);
 
   // display the results
-  color = "\x1b[" + to_string(32) + ";"+to_string(34)+"m";
   cout << color;
-  cout << setprecision(4) << "\nVelocity given " << ds << " "<< dsUnit << " and " << dt << " " << dtUnit << " is " << ds/dt << " " << dsUnit << "/" << dtUnit << endl;
+  cout << setprecision(4) << "\nGiven a speed of " << ds << " "<< dsUnit << " and a time of " << dt << " " << dtUnit << ", velocity is " << ds/dt << " " << dsUnit << "/" << dtUnit << endl;
   cout << reset;
   
 }
@@ -160,29 +156,28 @@ void calcAcceleration()
   // variables
   double dv = 0.0, dt = 0.0; 
   string dvUnit = "", dtUnit = "";
-  string color;
+  string color = "\x1b[" + to_string(32) + ";"+to_string(31)+"m";
   string reset = "\x1b[0m";
 
-  cout << "\nAcceleration Calculator\n";
-  cout << "-------------------\n";
+  cout << color << "\nAcceleration Calculator\n" << reset;
+  cout << "--------------------------\n";
   
   // ask user for ds, dt, and their units
-  cout << "Enter dv, ";
+  cout << "Enter dv (velocity), ";
   dv = validateDouble(dv);
 
   cout << "\nEnter dv's units, ";
   dvUnit = validateString(dvUnit);
 
-  cout << "\nEnter dt, ";
+  cout << "\nEnter dt (time), ";
   dt = validateDouble(dt);
 
   cout << "\nEnter dt's units, ";
   dtUnit = validateString(dtUnit);
 
   // display the results
-  color = "\x1b[" + to_string(32) + ";"+to_string(31)+"m";
   cout << color;
-  cout << setprecision(4) << "\nVelocity given " << dv << " "<< dvUnit << " and " << dt << " " << dtUnit << " is " << dv/dt << " " << dvUnit << "/" << dtUnit << endl;
+  cout << setprecision(4) << "\nGiven a velocity of " << dv << " "<< dvUnit << " and a time of " << dt << " " << dtUnit << ", acceleration is " << dv/dt << " " << dvUnit << "/" << dtUnit << endl;
   cout << reset;
 }
 
@@ -191,27 +186,20 @@ void calcMotion()
   // variables
   char motionChoice = '\0';
   double Ma = 0.0, v0 = 0.0, a = 0.0, t = 0.0, v = 0.0;
-
+  string color = "\x1b[" + to_string(32) + ";"+to_string(35)+"m";
+  string reset = "\x1b[0m";
   
-  cout << "\nMotion Calculator Menu\n";
+  cout << color << "\nMotion Calculator Menu\n" << reset;
   cout << "A. Ma = solve for v" << endl;
   cout << "B. Ms = solve for s" << endl;
   cout << "C. Mv2 = solve for v^2" << endl;
   cout << "D. Mv = solve for v_bar" << endl;
-  cout << "Option, ";
+  cout << "Enter your choice, ";
   motionChoice = validateChar(motionChoice);
 
   if (motionChoice == 'A' || motionChoice == 'a')
   {
-    cout << "\nEnter v0: ";
-    cin >> v0; 
-    cout << "\nEnter a: ";
-    
-    cin >> a;
-    cout << "\nEnter t: ";
-    cin >> t; 
-    v = v0 + (a * t); 
-    cout << "\nVelocity = " << v << endl;
+    // solve for Ma
   }
     
   else if (motionChoice == 'b' || motionChoice == 'B')
@@ -234,9 +222,56 @@ void calcMotion()
   }
 }
 
+void calcV()
+{
+  
+}
+  
+void calcS()
+{
+  
+}
+  
+void calcVSquared()
+{
+
+}
+
+void calcVBar()
+{
+  
+}
+
+
 void calcNewtonsSecondLaw()
 {
-  cout << "this is newton's second law";
+  // variables
+  double m = 0.0, a = 0.0; 
+  string mUnit = "", aUnit = "";
+  string color = "\x1b[" + to_string(32) + ";"+to_string(91)+"m";
+  string reset = "\x1b[0m";
+
+  cout << color << "\nNetwon's Second Law Calculator\n" << reset;
+  cout << "------------------------------\n";
+
+  // ask user for ds, dt, and their units
+  cout << "Enter m (mass), ";
+  m = validateDouble(m);
+
+  cout << "\nEnter m's units, ";
+  mUnit = validateString(mUnit);
+
+  cout << "\nEnter a (acceleration), ";
+  a = validateDouble(a);
+
+  cout << "\nEnter a's units, ";
+  aUnit = validateString(aUnit);
+
+  // display the results
+  cout << color;
+  cout << setprecision(4) << "\nGiven a mass of " << m << " "<< mUnit << " and an acceleration of " << a << " " << aUnit << ", Newton's second law calculates force as " << m * a << " " << mUnit << " "<< aUnit << endl;
+  cout << reset;
+
 }
 
 void calcWeight()
