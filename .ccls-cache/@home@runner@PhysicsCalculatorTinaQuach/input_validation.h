@@ -1,3 +1,4 @@
+//From: http://stackoverflow.com/questions/514420/how-to-validate-numeric-input-c 
 // for input validation
 
 #include <ios>  
