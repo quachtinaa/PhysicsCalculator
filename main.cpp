@@ -1,4 +1,8 @@
-// Student: Tina Quach - 3/20/2024
+// Student: Tina Quach
+// Date: 3/20/2024
+// Class: COSC-1437-58002 OOP Dr. T
+// Program: a physics calculator that can calculate multiple physics formulas
+// Skills: Header files, input validation, color, functions
 // Credit to Dr.T for framework + input validation 
 // Credit to McMillanite James Orr and Dr.T for the colors solution
 
